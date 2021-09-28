@@ -1,0 +1,38 @@
+.jumbotron-fluid{
+    text-align: center;
+    padding-top: 5vh;
+    padding-bottom: 10vh;
+    background-color: aliceblue;
+}
+
+.card-img-top {
+    height: 12rem;
+}
+
+.btn-link {
+    text-decoration: none;
+}
+
+.faq {
+    background-color: aliceblue;
+}
+
+.mystyle input[type="description"] {
+   height: 10vh;
+   font-size: 10px;
+   line-height: 14px;
+}
+
+body {
+    background-color:aliceblue;
+}
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+    color:#FFFF
+    
+}
+.text-muted{
+    color:black !important ;
+}
