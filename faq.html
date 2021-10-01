@@ -26,7 +26,7 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-left:3vw; padding-right:3vw">
-    <a class="navbar-brand" href="#">Hoos HitchHiking</a>
+    <a class="navbar-brand" href="index.html">Hoos HitchHiking</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -39,10 +39,47 @@
         </div>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="signin.html"><i class="fa-solid fa-user fa-2x" style = "color:gray; margin-right: 1vw;" role="img" title = "Profile"></i></a></li>
+      <button type="button" class="fa-solid fa-user fa-2x" style = "background:none; border:none;outline: none;color:gray; margin-right: 1vw;" role="img" title = "Profile" data-toggle="modal" data-target="#profileModal"></button>              
       <li><a href="create.html"><i class="fa-solid fa-square-plus fa-2x" style = "color:gray" role="img" title = "Create a Post"></i></a>
     </ul>
   </nav>
+  <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Profile</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Crystal Ho">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="123@virginia.edu">
+                </div>
+                <div class="form-group">
+                    <label for="meeting-time">Location</label>
+                  <input type="input" class = "form-control" id="meeting-time" name="meeting-time">
+                </div>
+                <div class="form-group">
+                    <label for="event-description">Car Description</label>
+                    <textarea class="form-control" id="event-description" rows="7"></textarea>
+                </div>
+                <a class="btn btn-primary" href="signin.html" role="button">Logout</a>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save</button>
+        </div>
+        </div>
+    </div>
+  </div>
   <h1 class = "display-4" style = "text-align: center; margin-top: 4vh; margin-bottom: 4vh;">
     Frequently Asked Questions
   </h1>
