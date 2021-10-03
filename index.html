@@ -39,7 +39,7 @@ Accordion
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-left:3vw; padding-right:3vw">
+    <nav class="navbar navbar-expand-lg navbar-light" style="padding-left:3vw; padding-right:3vw; background-color: #fa9c3d;">
         <a class="navbar-brand" href="#">Hoos HitchHiking</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -96,8 +96,8 @@ Accordion
       </div>
     <div class="jumbotron jumbotron-fluid" style = "background-color: #ffeed3;">
         <div class="container" style = "text-align: center;">
-            <h1 class="display-4">What are you feeling?</h1>
-            <p>Search for a hangout that best fits your current mood</p>
+            <h1 class="display-4">Where to?</h1>
+            <p>Search for a place in UVA</p>
             <div class="input-group rounded">
                 <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                 aria-describedby="search-addon" />
@@ -111,7 +111,7 @@ Accordion
 
         <div class="row no-gutters" style = "margin: 40px 0 20px">
             <div class = "col-12 col-sm-6 col-md-8">
-                <h1 class = "display-6">Happening soon</h1>
+                <h1 class = "display-6">Departing soon</h1>
             </div>
             
         </div>
@@ -120,34 +120,39 @@ Accordion
                     <div class="card card-default">
                         <img class="card-img-top" src="styles/images/uva-afc.jpg" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Free swimming lessons at AFC!</h5>
-                            <p>Date: 9/28/2021</p>
-                            <p>Time: 11:00 AM - 2:00 PM</p>
-                            <p class="card-text">Free swimming lessons! People of all experiences are welcome to join.</p>
-                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">RSVP</button>
+                            <h5 class="card-title">Aquatic Fitness Center</h5>
+                            <p>Date: 10/5/2021</p>
+                            <p>Departure Time: 11:00 AM</p>
+                            <p class="card-text">Heading to the AFC to workout, anyone can hitch a ride!</p>
+                            <a href="#" class="stretched-link" data-toggle="modal" data-target="#detailModal"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
                     <div class="card card-default">
-                        <img class="card-img-top" src="styles/images/smash.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="styles/images/barracks.jpg" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Smash Tournament</h5>
+                            <h5 class="card-title">Barracks</h5>
                             <p>Date: 9/28/2021</p>
-                            <p>Time: 11:00 AM - 2:00 PM</p>
-                            <p class="card-text">Fox only final destination no items</p>
-                            <a href="#" class="btn btn-success"  data-toggle="modal" data-target="#exampleModal">RSVP</a>
+                            <p>Time: 11:00 AM</p>
+                            <p class="card-text">We are going to barracks if you want to get anything there! We request
+                                a small fee of $2 for gas :)
+                            </p>
+                            <a href="#" class="stretched-link" data-toggle="modal" data-target="#detailModal"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
                     <div class="card card-default">
-                        <img class="card-img-top" src="styles/images/party.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="styles/images/Ohill.jpg" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Block Party</h5>
+                            <h5 class="card-title">Ohill</h5>
                             <p>Date: 9/28/2021</p>
-                            <p>Time: 11:00 AM - 2:00 PM</p>
-                            <p class="card-text">we having a party woooooo.</p>
+                            <p>Time: 1:00 PM</p>
+                            <p class="card-text">We are going to OHill to get some food. Feel free to hitch a ride if you wanna be any
+                                where neat that area!
+                            </p>
+                            <a href="#" class="stretched-link" data-toggle="modal" data-target="#detailModal"></a>
                         </div>
                     </div>
                 </div>
@@ -155,18 +160,19 @@ Accordion
                     <div class="card card-default">
                         <img class="card-img-top" src="styles/images/uva-lawn.jpg" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Chilling on the lawn</h5>
-                            <p class="card-text">We chilling on the lawn telling stories about when we streaked the lawn come thru</p>
+                            <h5 class="card-title">The Lawn</h5>
+                            <p class="card-text">Going to the lawn. Rides are free!</p>
+                            <a href="#" class="stretched-link" data-toggle="modal" data-target="#detailModal"></a>
                         </div>
                     </div>
                 </div>
             </div>
             <!--RSVP-->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+                        <h5 class="modal-title" id="detailModalLabel">Post Details</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -184,7 +190,7 @@ Accordion
 
             <div class="container">
                 <div class = "soon" style = "margin: 40px 0 20px">
-                    <h1 class = "display-6">Popular</h1>
+                    <h1 class = "display-6">Nearby</h1>
                 </div>
                     <div class="row">
                         <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
@@ -244,8 +250,7 @@ Accordion
                 <i class="fas fa-gem me-3"></i>Hoos Hitchiking?
             </h6>
             <p>
-                Here you can use rows and columns to organize your footer content. Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit.
+                A ridesharing app for UVA students.
             </p>
         </div>
         <!-- Grid column -->
