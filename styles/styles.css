@@ -1,3 +1,4 @@
+
 .jumbotron-fluid{
     text-align: center;
     padding-top: 5vh;
@@ -24,7 +25,7 @@
 }
 
 body {
-    background-color:#84a0f3;
+    background-color:#c2ecf7;
 }
 
 a:hover, a:visited, a:link, a:active
@@ -35,4 +36,29 @@ a:hover, a:visited, a:link, a:active
 }
 .text-muted{
     color:black !important ;
+}
+
+.searchheader {
+    background-image: url("./images/rotundasunset.jpg");
+    background-repeat: no-repeat;
+    background-position-x:center;
+    background-size:cover;
+    background-position-y:70%;
+    color:whitesmoke;
+    font-weight:900;
+    text-shadow: 2px;
+    height: 40vh;
+}
+.txtoutline
+{
+    color: white;
+    text-shadow:
+    -1px -1px 0 rgb(83, 82, 82),
+    1px -1px 0 rgb(83, 82, 82),
+    -1px 1px 0 rgb(83, 82, 82),
+    1px 1px 0 rgb(83, 82, 82);  
+}
+
+.display-4 {
+    font-family: 'Staatliches', cursive;
 }

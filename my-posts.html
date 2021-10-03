@@ -7,7 +7,10 @@
     <meta name="description" content="Dashboard for hangout website">  
     
     <title>Hoos HitchHiking</title>
-    
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -25,23 +28,39 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-left:3vw; padding-right:3vw">
-        <a class="navbar-brand" href="index.html">Hoos HitchHiking</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="index.html">Home</a>
-                <a class="nav-item nav-link" href="my-posts.html">My Posts</a>
-                <a class="nav-item nav-link" href="all.html">All Posts</a>
-                <a class="nav-item nav-link" href="faq.html">FAQ</a>
-            </div>
+    <nav class="navbar navbar-expand-md" style = "background-color:#E57200; font-family: 'Staatliches', cursive;">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="my-posts.html">My Posts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="all.html">All Posts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="faq.html">FAQ</a>
+                </li>
+            </ul>
         </div>
-        <ul class="nav navbar-nav navbar-right">
-            <button type="button" class="fa-solid fa-user fa-2x" style = "background:none; border:none;outline: none;color:gray; margin-right: 1vw;" role="img" title = "Profile" data-toggle="modal" data-target="#profileModal"></button>              
-            <li><a href="create.html"><i class="fa-solid fa-square-plus fa-2x" style = "color:gray" role="img" title = "Create a Post"></i></a>
-        </ul>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="#">Hoos HitchHiking?</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#profileModal">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="create.html">Create Post</a>
+                </li>
+            </ul>
+        </div>
     </nav>
     <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -80,7 +99,7 @@
             </div>
         </div>
       </div>
-    <h1 class = "display-4" style = "text-align: center; margin-top: 4vh; margin-bottom: 4vh;">
+    <h1 class = "display-4" style = "text-align: center; margin-top: 4vh; margin-bottom: 4vh; font-family: 'Staatliches', cursive;">
         My posts
     </h1>
     <div class="container">
@@ -174,8 +193,7 @@
                 <i class="fas fa-gem me-3"></i>Hoos Hitchiking?
             </h6>
             <p>
-                Here you can use rows and columns to organize your footer content. Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit.
+                A ridesharing app for UVA students.
             </p>
         </div>
         <!-- Grid column -->
@@ -230,7 +248,6 @@
     <!-- Copyright -->
 </footer>
 <!-- Footer -->
-
 
 
 
