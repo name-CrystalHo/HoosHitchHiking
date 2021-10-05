@@ -74,20 +74,20 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Crystal Ho">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Crystal Ho">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Email</label>
                       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="123@virginia.edu">
                     </div>
                     <div class="form-group">
-                        <label for="meeting-time">Location</label>
-                      <input type="input" class = "form-control" id="meeting-time" name="meeting-time">
+                        <label for="meeting-location">Location</label>
+                      <input type="input" class = "form-control" id="meeting-location" name="meeting-location">
                     </div>
                     <div class="form-group">
-                        <label for="event-description">Car Description</label>
-                        <textarea class="form-control" id="event-description" rows="7"></textarea>
+                        <label for="car-description">Car Description</label>
+                        <textarea class="form-control" id="car-description" rows="3"></textarea>
                     </div>
                     <a class="btn btn-primary" href="signin.html" role="button">Logout</a>
                 </form>
@@ -103,8 +103,141 @@
         All posts
     </h1>
 
+    <div class="container">
+        <div class="row no-gutters" style = "margin: 40px 0 20px">
+          </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
+                    <div class="card card-default">
+                        <img class="card-img-top" src="styles/images/uva-afc.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Aquatic Fitness Center</h5>
+                            <p>Date: 10/5/2021</p>
+                            <p>Departure Time: 11:00 AM</p>
+                            <p class="card-text">Heading to the AFC to workout, anyone can hitch a ride!</p>
+                            <a href="#" class="stretched-link" data-toggle="modal" data-target="#detailModal"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
+                    <div class="card card-default">
+                        <img class="card-img-top" src="styles/images/barracks.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Barracks</h5>
+                            <p>Date: 9/28/2021</p>
+                            <p>Time: 11:00 AM</p>
+                            <p class="card-text">We are going to barracks if you want to get anything there! We request
+                                a small fee of $2 for gas :)
+                            </p>
+                            <a href="#" class="stretched-link" data-toggle="modal" data-target="#detailModal"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
+                    <div class="card card-default">
+                        <img class="card-img-top" src="styles/images/Ohill.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Ohill</h5>
+                            <p>Date: 9/28/2021</p>
+                            <p>Time: 1:00 PM</p>
+                            <p class="card-text">We are going to OHill to get some food. Feel free to hitch a ride if you wanna be any
+                                where neat that area!
+                            </p>
+                            <a href="#" class="stretched-link" data-toggle="modal" data-target="#detailModal"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
+                    <div class="card card-default">
+                        <img class="card-img-top" src="styles/images/uva-lawn.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">The Lawn</h5>
+                            <p>Date: 9/28/2021</p>
+                            <p>Time: 1:00 PM</p>
+                            <p class="card-text">We are going to the lawn. Rides are free!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--RSVP-->
+            <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="detailModalLabel">Post Details</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Contact Info</h5>
+                        <p>Phone: xxx-xxx-xxxx</p>
+                        <p>Email: xxx-xxx-xxxx</p>
+                        <hr>
+                        <h5>Description</h5>
+                        <p>Description goes here</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
 
-
+            <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
+                            <div class="card card-default">
+                                <img class="card-img-top" src="styles/images/uva-afc.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Aquatic Fitness Center</h5>
+                                    <p>Date: 10/5/2021</p>
+                                    <p>Departure Time: 11:00 AM</p>
+                                    <p class="card-text">Heading to the AFC to workout, anyone can hitch a ride!</p>
+                                    <a href="#" class="stretched-link" data-toggle="modal" data-target="#detailModal"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
+                            <div class="card card-default">
+                                <img class="card-img-top" src="styles/images/uva-afc.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Aquatic Fitness Center</h5>
+                                    <p>Date: 10/5/2021</p>
+                                    <p>Departure Time: 11:00 AM</p>
+                                    <p class="card-text">Heading to the AFC to workout, anyone can hitch a ride!</p>
+                                    <a href="#" class="stretched-link" data-toggle="modal" data-target="#detailModal"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
+                            <div class="card card-default">
+                                <img class="card-img-top" src="styles/images/uva-afc.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Aquatic Fitness Center</h5>
+                                    <p>Date: 10/5/2021</p>
+                                    <p>Departure Time: 11:00 AM</p>
+                                    <p class="card-text">Heading to the AFC to workout, anyone can hitch a ride!</p>
+                                    <a href="#" class="stretched-link" data-toggle="modal" data-target="#detailModal"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
+                            <div class="card card-default">
+                                <img class="card-img-top" src="styles/images/uva-afc.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Aquatic Fitness Center</h5>
+                                    <p>Date: 10/5/2021</p>
+                                    <p>Departure Time: 11:00 AM</p>
+                                    <p class="card-text">Heading to the AFC to workout, anyone can hitch a ride!</p>
+                                    <a href="#" class="stretched-link" data-toggle="modal" data-target="#detailModal"></a>
+                                </div>
+                            </div>
+                    </div>
+                    </div>
+    </div>
+    </div>
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-light text-muted" style = "margin-top: 200px; padding-top: 3vh;">
 

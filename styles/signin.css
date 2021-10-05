@@ -19,6 +19,7 @@ html, body, .viewport {
 .title {
     font-size: 1000px;
 }
+/* LEFT CONTAINER */
 .left-container{
     flex: 50%;
     background: linear-gradient(180deg, #232D4B 42%, rgba(35, 45, 75, 0) 100%);
@@ -36,6 +37,7 @@ html, body, .viewport {
     height: 100px;
     widows: inherit;
 }
+/* GOOGLE LOGIN BUTTON */
 .left-container button{
     background:url(images/btn_google_signin_light_normal_web.png); 
     background-size: cover; 
@@ -54,7 +56,7 @@ html, body, .viewport {
     background-size: cover; 
 }
 
-
+/* Divided slant */
 .slanted {
     -webkit-clip-path: polygon(100% 0, 0 0, 0% 100%,100% 0);
     clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 0%);
@@ -64,7 +66,7 @@ html, body, .viewport {
     height:100%;
     width:100%;
 }
-
+/* RIGHT CONTAINER */
 .right-container{
     flex:50%;
     background: linear-gradient(180deg, #232D4B 42%, rgba(35, 45, 75, 0) 100%);
