@@ -28,6 +28,7 @@
 </head>
 
 <body>
+    <!--Navbar-->
     <nav class="navbar sticky-top navbar-expand-md" style = "background-color:#E57200; font-family: 'Staatliches', cursive;">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
@@ -62,6 +63,7 @@
             </ul>
         </div>
     </nav>
+    <!--Profile Modal-->
     <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -78,12 +80,12 @@
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Crystal Ho">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Email</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="123@virginia.edu">
+                        <label for="exampleInputEmail1">Email</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="123@virginia.edu">
                     </div>
                     <div class="form-group">
                         <label for="meeting-time">Location</label>
-                      <input type="input" class = "form-control" id="meeting-time" name="meeting-time">
+                        <input type="input" class = "form-control" id="meeting-time" name="meeting-time">
                     </div>
                     <div class="form-group">
                         <label for="event-description">Car Description</label>
@@ -98,17 +100,19 @@
             </div>
             </div>
         </div>
-      </div>
+    </div>
+
+    <!--Create Post form-->
     <h1 class = "display-4" style = "text-align: center; margin-top: 4vh; margin-bottom: 4vh;">
         Create a Post
     </h1>
     <div class = "row" style = "text-align: center; margin-left: 50%; margin-right: 50%;">
     <div class="btn-group btn-group-toggle" data-toggle="buttons" style = "justify-content: center;">
         <label class="btn btn-secondary active">
-          <input type="radio" name="options" id="option1" autocomplete="off" checked> Request
+            <input type="radio" name="options" id="option1" autocomplete="off" checked> Request
         </label>
         <label class="btn btn-secondary">
-          <input type="radio" name="options" id="option2" autocomplete="off"> Offer
+            <input type="radio" name="options" id="option2" autocomplete="off"> Offer
         </label>
     </div>
     </div>
@@ -118,12 +122,12 @@
     <div class="col col-lg-6">
     <form>
         <div class="form-group">
-          <label for="exampleInputEmail1">Destination</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter event name">
+            <label for="exampleInputEmail1">Destination</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter event name">
         </div>
         <div class="form-group">
             <label for="meeting-time">Date and Time of Departure</label>
-          <input type="datetime-local" class = "form-control" id="meeting-time" name="meeting-time">
+            <input type="datetime-local" class = "form-control" id="meeting-time" name="meeting-time">
         </div>
         <div class="form-group">
             <label for="event-description">Description</label>

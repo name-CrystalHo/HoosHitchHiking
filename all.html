@@ -28,6 +28,7 @@
 </head>
 
 <body>
+    <!--Navbar-->
     <nav class="navbar sticky-top navbar-expand-md" style = "background-color:#E57200; font-family: 'Staatliches', cursive;">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
@@ -62,6 +63,7 @@
             </ul>
         </div>
     </nav>
+    <!--Profile Modal-->
     <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -78,12 +80,12 @@
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Crystal Ho">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Email</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="123@virginia.edu">
+                        <label for="exampleInputEmail1">Email</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="123@virginia.edu">
                     </div>
                     <div class="form-group">
                         <label for="meeting-time">Location</label>
-                      <input type="input" class = "form-control" id="meeting-time" name="meeting-time">
+                        <input type="input" class = "form-control" id="meeting-time" name="meeting-time">
                     </div>
                     <div class="form-group">
                         <label for="event-description">Car Description</label>
@@ -98,12 +100,37 @@
             </div>
             </div>
         </div>
-      </div>
+    </div>
+
+    <!--All posts section-->
     <h1 class = "display-4" style = "text-align: center; margin-top: 4vh; margin-bottom: 4vh; font-family: 'Staatliches', cursive;">
         All posts
     </h1>
 
-
+    <!--Post Details Modal-->
+    <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detailModalLabel">Post Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <div class="modal-body">
+                <h5>Contact Info</h5>
+                <p>Phone: xxx-xxx-xxxx</p>
+                <p>Email: xxx-xxx-xxxx</p>
+                <hr>
+                <h5>Description</h5>
+                <p>Description goes here</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
 
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-light text-muted" style = "margin-top: 200px; padding-top: 3vh;">

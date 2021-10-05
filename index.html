@@ -3,16 +3,6 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
 -->
 <!DOCTYPE html>
 <html lang="en">
-<!--Components Used:
-Cards
-Navbar
-Buttons
-Jumbotron
-Forms
-Modal ("click RSVP")
-Accordion
--->
-
 <head>
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,6 +33,7 @@ Accordion
 </head>
 
 <body>
+    <!--Navbar-->
     <nav class="navbar sticky-top navbar-expand-md" style = "background-color:#E57200; font-family: 'Staatliches', cursive;">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
@@ -77,6 +68,7 @@ Accordion
             </ul>
         </div>
     </nav>
+    <!--Profile Modal-->
     <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -114,6 +106,7 @@ Accordion
             </div>
         </div>
         </div>
+    <!--Searchbar-->
     <div class="jumbotron jumbotron-fluid searchheader txtoutline">
         <div class="container" style = "text-align: center;">
             <h1 class="display-4" style = "font-weight: 900;">Where to?</h1>
@@ -128,6 +121,7 @@ Accordion
         </div>
     </div>
 
+    <!--Departing soon featured-->
     <div class="container">
         <div class="row no-gutters" style = "margin: 40px 0 20px">
             <div class = "col-12 col-sm-6 col-md-8">
@@ -189,7 +183,7 @@ Accordion
                     </div>
                 </div>
             </div>
-            <!--RSVP-->
+            <!--Post Details Modal-->
             <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -213,7 +207,7 @@ Accordion
                     </div>
                 </div>
             </div>
-
+            
             <div class="container">
                 <div class = "soon" style = "margin: 40px 0 20px">
                     <h1 class = "display-6" style = "font-family: 'Staatliches', cursive;">Nearby</h1>
