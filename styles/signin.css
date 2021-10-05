@@ -45,6 +45,14 @@ html, body, .viewport {
     border:none;
     outline: none;
 }
+.left-container button:hover{
+    background:url(images/btn_google_signin_light_focus_web.png); 
+    background-size: cover; 
+}
+.left-container button:active{
+    background:url(images/btn_google_signin_light_pressed_web.png);
+    background-size: cover; 
+}
 
 
 .slanted {
