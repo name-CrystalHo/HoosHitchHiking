@@ -82,22 +82,22 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
                     </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="<?=$this->url?>/question/" method="post" id = "profileForm">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Crystal Ho">
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Crystal Ho">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="123@virginia.edu">
+                        <label for="exampleInputEmail1">Contact</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="123@virginia.edu">
                     </div>
                     <div class="form-group">
                         <label for="meeting-time">Location</label>
-                        <input type="input" class = "form-control" id="meeting-time" name="meeting-time">
+                        <input type="text" class = "form-control" id="meeting-time" name="meeting-time">
                     </div>
                     <div class="form-group">
                         <label for="event-description">Car Description</label>
-                        <textarea class="form-control" id="event-description" rows="7"></textarea>
+                        <textarea class="form-control" id="event-description" form="profileForm" rows="7"></textarea>
                     </div>
                     <a class="btn btn-primary" href="signin.php" role="button">Logout</a>
                 </form>
@@ -108,7 +108,7 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
             </div>
             </div>
         </div>
-        </div>
+    </div>
     <!--Searchbar-->
     <div class="jumbotron jumbotron-fluid searchheader txtoutline">
         <div class="container" style = "text-align: center;">

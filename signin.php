@@ -15,6 +15,7 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+        <meta name="google-signin-client_id" content="GOOGLE_SIGNIN_CLIENT_ID" >
     </head>  
     <body>
         <!-- Flexbox container -->
@@ -23,7 +24,7 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
             <div class="left-container">
                 <img src="styles/images/uvalogo.png" alt="uvalogo">
                 <div class="title" style="font-family: 'Staatliches', cursive; font-size: 7vw;">Hoos <br> HitchHiking?</div>
-                <a href="index.html"><button title="google-login"></button></a>
+                <a href="<?=$this->url?>/login/"><button title="google-login"></button></a>
             </div>
             <!-- Right Container (contains Uva image) -->
             <div class="right-container ">
@@ -33,4 +34,8 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
         </div>
     </body>
 </html>
-    
+<?php
+// Instantiate the controller and run
+$trivia = new TriviaController();
+$trivia->run($parts[0]);
+?>
