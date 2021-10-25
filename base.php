@@ -4,7 +4,7 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
 -->
 <!-- cs4640 Server: https://cs4640.cs.virginia.edu/cth6xmj/sprint2/ -->
 <!-- Google Cloud Platform:https://storage.googleapis.com/webpl-demo-hooshitchhiking/index.html-->
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">  
@@ -99,7 +99,7 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
                         <label for="event-description">Car Description</label>
                         <textarea class="form-control" id="event-description" rows="7"></textarea>
                     </div>
-                    <a class="btn btn-primary" href="signin.php" role="button">Logout</a>
+                    <a class="btn btn-primary" href="" role="button">Logout</a>
                 </form>
             </div>
             <div class="modal-footer">
