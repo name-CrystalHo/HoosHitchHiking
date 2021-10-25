@@ -86,18 +86,16 @@ class HHController {
             // Now check if user exist with same email ID
         $sql = "SELECT COUNT(*) AS count from students where email = :email_id";
         try {
-          $stmt = $DB->prepare($sql);
-          $stmt->bindValue(":email_id", $user->email);
-          $stmt->execute();
-          $result = $stmt->fetchAll();
-       
-          if ($result[0]["count"] > 0) {
+            $stmt = $DB->prepare($sql);
+            $stmt->bindValue(":email_id", $user->email);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+        if ($result[0]["count"] > 0) {
             // User Exist 
-       
             $_SESSION["name"] = $user->name;
             $_SESSION["email"] = $user->email;
             $_SESSION["new_user"] = "no";
-          } else {
+        } else {
             // New user, Insert in database
             $sql = "INSERT INTO `google_users` (`name`, `email`) VALUES " . "( :name, :email)";
             $stmt = $DB->prepare($sql);
@@ -106,10 +104,10 @@ class HHController {
             $stmt->execute();
             $result = $stmt->rowCount();
             if ($result > 0) {
-              $_SESSION["name"] = $user->name;
-              $_SESSION["email"] = $user->email;
-              $_SESSION["new_user"] = "yes";
-              $_SESSION["error_msg"] = "";
+                $_SESSION["name"] = $user->name;
+                $_SESSION["email"] = $user->email;
+                $_SESSION["new_user"] = "yes";
+                $_SESSION["error_msg"] = "";
             }
           }
         } catch (Exception $ex) {

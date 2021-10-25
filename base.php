@@ -82,7 +82,7 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
                     </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action = "updateProfile.php">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Name</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Crystal Ho">
