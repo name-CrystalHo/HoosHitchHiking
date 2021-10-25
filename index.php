@@ -1,4 +1,19 @@
 <?php include 'base.php' ?>
+    <!--Searchbar-->
+    <?=$message?>
+    <div class="jumbotron jumbotron-fluid searchheader txtoutline">
+        <div class="container" style = "text-align: center;">
+            <h1 class="display-4" style = "font-weight: 900;">Where to?</h1>
+            <p>Search for a place in UVA</p>
+            <div class="input-group rounded">
+                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                aria-describedby="search-addon"/>
+                <span class="input-group-text border-0" id="search-addon">
+                <button><i class="fas fa-search" role="img" title = "Search"></i></button>
+                </span>
+            </div>
+        </div>
+    </div>
     <!--Departing soon featured-->
     <div class="container">
         <div class="row no-gutters" style = "margin: 40px 0 20px">
