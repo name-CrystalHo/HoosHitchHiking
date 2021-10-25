@@ -1,4 +1,6 @@
-<?php include 'base.php' ?>
+<?php include 'base.php' 
+
+?>
     <!--Departing soon featured-->
     <div class="container">
         <div class="row no-gutters" style = "margin: 40px 0 20px">
@@ -138,3 +140,6 @@
     </div>
 
 <?php include("footer.php")?>
+<?php
+$HH = new HHController();
+$HH->run($parts[0]);?>

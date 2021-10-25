@@ -23,7 +23,7 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
             <div class="left-container">
                 <img src="styles/images/uvalogo.png" alt="uvalogo">
                 <div class="title" style="font-family: 'Staatliches', cursive; font-size: 7vw;">Hoos <br> HitchHiking?</div>
-                <a href="index.html"><button title="google-login"></button></a>
+                <a href="<?=$this->url?>/login/"><button title="google-login"></button></a>
             </div>
             <!-- Right Container (contains Uva image) -->
             <div class="right-container ">
@@ -33,4 +33,3 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
         </div>
     </body>
 </html>
-    
