@@ -67,7 +67,7 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
                     <a class="nav-link" href="#" data-toggle="modal" data-target="#profileModal">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="create.php">Create Post</a>
+                    <a class="nav-link" href="<?=$this->url?>/create">Create Post</a>
                 </li>
             </ul>
         </div>
@@ -125,4 +125,4 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
             </div>
         </div>
     </div>
-    <?php if(!empty($_SESSION["profileUpdate"])){echo $_SESSION["profileUpdate"];}?>
+    <?php if(!empty($_SESSION["updateProfile"])){echo $_SESSION["updateProfile"];}?>

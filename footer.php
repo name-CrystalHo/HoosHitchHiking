@@ -25,16 +25,16 @@
                 Pages
             </h6>
             <p>
-                <a href="index.php" class="text-reset">Home</a>
+                <a href="<?=$this->url?>/home"> class="text-reset">Home</a>
             </p>
             <p>
-                <a href="my-posts.php" class="text-reset">My Posts</a>
+                <a href="<?=$this->url?>/mypost" class="text-reset">My Posts</a>
             </p>
             <p>
-                <a href="all.php" class="text-reset">All Posts</a>
+                <a href="<?=$this->url?>/all" class="text-reset">All Posts</a>
             </p>
             <p>
-                <a href="faq.php" class="text-reset">FAQ</a>
+                <a href="<?=$this->url?>/faq" class="text-reset">FAQ</a>
             </p>
         </div>
         <!-- Grid column -->
