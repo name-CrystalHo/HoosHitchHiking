@@ -23,7 +23,7 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
             <div class="left-container">
                 <img src="styles/images/uvalogo.png" alt="uvalogo">
                 <div class="title" style="font-family: 'Staatliches', cursive; font-size: 7vw;">Hoos <br> HitchHiking?</div>
-                <a href="<?=$this->url?>/signin/"><button title="google-login"></button></a>
+                <a href="<?php echo $client->createAuthUrl(); ?>"><button title="google-login"></button></a>
             </div>
             <!-- Right Container (contains Uva image) -->
             <div class="right-container ">

@@ -1,13 +1,19 @@
 <?php
 
 class Database {
-    private $mysqli;
+    public $mysqli;
+    public  $clientID;
+    public  $clientSecret;
+    public  $redirectUri;
 
     public function __construct(){
         include("database_credentials.php"); // define variables
 
         /** SETUP **/
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); //Extra error printing
+        $this->clientID =$clientID;
+        $this->clientSecret =$clientSecret;
+        $this->redirectUri =$redirectUri;
         $this->mysqli = new mysqli($dbhost, $dbusername, $dbpasswd, $dbname);
     }
     public function query($query,$bparam=null, ...$param){ //$bparam is the param type,e.g, ssi
