@@ -18,6 +18,5 @@
         datetime text not null,
         description text not null,
         primary key (id));");
-    */
 
 ?>
