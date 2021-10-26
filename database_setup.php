@@ -5,7 +5,7 @@
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     $db = new mysqli($dbhost, $dbusername, $dbpasswd, $dbname);
     
-    $db->query("drop table if exists student;");
+    $db->query("drop table if exists students;");
     $db->query("create table student (
         email varchar(25) not null,
         name text not null,
@@ -23,6 +23,5 @@
         datetime text not null,
         description text not null,
         primary key (id));");
-    */
 
 ?>
