@@ -1,4 +1,11 @@
-<?php spl_autoload_register(function($classname){
+<!-- Resources: https://www.w3jar.com/login-with-google-account-using-php-mysqli-source-code/ -->
+
+<?php 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+spl_autoload_register(function($classname){
     include "$classname.php";
 });
 $path = parse_url($_SERVER["REQUEST_URI"],PHP_URL_PATH);
@@ -10,8 +17,7 @@ if(!isset($_SESSION["email"])){
     //need to login 
     $parts=["signin"];   
 }
-else{
-    $parts=["home"];  
-}
+
+
 $HH = new HHController();
 $HH->run($parts[0]);?>

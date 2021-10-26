@@ -1,4 +1,6 @@
-<?php include("base.php");?>
+<?php include("base.php");
+// echo $_SESSION["email"];
+?>
 
     <!--Departing soon featured-->
     <div class="container">

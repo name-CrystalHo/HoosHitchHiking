@@ -59,16 +59,16 @@ else {
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Home</a>
+                    <a class="nav-link" href="home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="my-posts.php">My Posts</a>
+                    <a class="nav-link" href="<?=$this->url?>/myposts">My Posts</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="all.php">All Posts</a>
+                    <a class="nav-link" href="<?=$this->url?>/all">All Posts</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="faq.php">FAQ</a>
+                    <a class="nav-link" href="<?=$this->url?>/faq">FAQ</a>
                 </li>
             </ul>
         </div>
@@ -100,10 +100,11 @@ else {
                     </button>
             </div>
             <div class="modal-body">
-                <form action = "updateProfile.php" method = "post">
+                <form action ="<?=$this->url?>/updateProfile" method = "post">
                     <div class="form-group">
+                        <input type="hidden" id="email" name="email" value=<?=$_SESSION['email']?>>
                         <label for="exampleInputEmail1">Name</label>
-                        <input type="text" class="form-control" id="name" name = "name" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" value=<?=$_SESSION['name']?> id="name" name = "name" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Contact</label>
@@ -117,7 +118,7 @@ else {
                         <label for="event-description">Car Description</label>
                         <textarea class="form-control" id="car_desc" name = "car_desc" rows="7"></textarea>
                     </div>
-                    <a class="btn btn-primary" href="signin.php" role="button">Logout</a>
+                    <a class="btn btn-primary" href="<?=$this->url?>/logout"  role="button">Logout</a>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Save</button>
@@ -127,3 +128,18 @@ else {
             </div>
         </div>
         </div>
+    <!--Searchbar-->
+    <div class="jumbotron jumbotron-fluid searchheader txtoutline">
+        <div class="container" style = "text-align: center;">
+            <h1 class="display-4" style = "font-weight: 900;">Where to?</h1>
+            <p>Search for a place in UVA</p>
+            <div class="input-group rounded">
+                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                aria-describedby="search-addon"/>
+                <span class="input-group-text border-0" id="search-addon">
+                <button><i class="fas fa-search" role="img" title = "Search"></i></button>
+                </span>
+            </div>
+        </div>
+    </div>
+    

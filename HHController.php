@@ -13,25 +13,39 @@ class HHController {
     //handles logic of methods
     public function run($command) {
         switch($command) {
-            // case "updateProfile":
-            //     $this->updateProfile();
-            case "logout":
-                $this->destroySession();
+            case "updateProfile":
+                $this->updateProfile();
                 break;
-            case "signin":
             case "home":
-                header("Location:home.php");
+                include("home.php");
+                break;
+            case "myposts":
+                include("my-posts.php");
+                break;
+            case "all":
+                include("all.php");
+                break;
+            case "faq":
+                include("faq.php");
+                break;
+            case "create":
+                include("create.php");
+                break;
+            case "logout":
+                $this->destroySession();           
+            case "signin":
             default:
                 $this->signin();
                 break;
         }
             
     }
-    
+
     //destroy and restart
-    private function destroySession() {          
+    public function destroySession() {          
         session_destroy();
         session_start();
+
     }
 
     public function signin() {
@@ -73,7 +87,8 @@ class HHController {
             if(mysqli_num_rows($get_user) > 0){
 
                 $_SESSION['email'] = $email; 
-                header('Location: /HoosHitchHiking/');
+                $_SESSION['name'] = $full_name; 
+                header('Location: /HoosHitchHiking/home');
                 return;
 
             }
@@ -83,30 +98,40 @@ class HHController {
                 $insert = mysqli_query($db_connection, "INSERT INTO `students`(`name`,`email`) VALUES('$full_name','$email')");
 
                 if($insert){
-                    $_SESSION['email'] = $email; 
+                    $_SESSION['email'] = $email;
+                    $_SESSION['name'] = $full_name;  
                     header('Location: /HoosHitchHiking/');
-                    exit;
+                    return;
                 }
                 else{
                     echo "Sign up failed!(Something went wrong).";
                 }
 
             }
-
         }
+        }
+        include("signin.php");
+    }
+        
+    
+    public function updateProfile() {
+        if ($_POST["name"] != "" || $_POST["contact"] != "" || $_POST["loc"] != "" || $_POST["car_desc"] != "" ) {
+            $stmt = $this->db->mysqli->prepare("update students set
+                                name = ?,
+                                contact = ?,
+                                loc = ?,
+                                car_desc = ?
+                                where email = ?;");
+                                //TODO: Use session email
+            $stmt->bind_param("sssss", $_POST["name"], $_POST["contact"], $_POST["loc"], $_POST["car_desc"],$_POST["email"]);
+            if ($stmt->execute()) {
+                $success = True;
+            }
+        }
+            else {
+                $success = False;
+            }
+            header("Location:home");
     }
 
-    public function updateProfile() {
-        // if (isset($_POST["name"]) || isset($_POST["name"]) || isset($_POST["contact"]) || isset($_POST["loc"]) || isset($_POST["car_desc"])) {
-        //     $stmt = $mysqli->prepare("update student set
-        //                         name = ?,
-        //                         contact = ?,
-        //                         loc = ?,
-        //                         car_desc = ?
-        //                         where email = 'jtk2rw@virginia.edu';");
-        //                         //TODO: Use session email
-        //     $stmt->bind_param("ssss", $_POST["name"], $_POST["contact"], $_POST["loc"], $_POST["car_desc"]);
-        //     $stmt->execute(); 
-        // }
-    }
 }
