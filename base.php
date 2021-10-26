@@ -4,6 +4,24 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
 -->
 <!-- cs4640 Server: https://cs4640.cs.virginia.edu/cth6xmj/sprint2/ -->
 <!-- Google Cloud Platform:https://storage.googleapis.com/webpl-demo-hooshitchhiking/index.html-->
+<?php
+include("database_credentials.php");
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+$mysqli = new mysqli($dbhost, $dbusername, $dbpasswd, $dbname);
+$message = "";
+if (isset($_GET["success"])) {
+    if ($_GET["success"] == true) {
+        $message = "<div class='alert alert-success' style = 'margin:0;'><b>Profile successfully updated!</b></div>";
+    }
+    else {
+        $message = "<div class='alert alert-danger'style = 'margin:0;'><b>Error: Unable to update profile</b></div>";
+    }
+}
+else {
+    $message = "";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,45 +100,30 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
                     </button>
             </div>
             <div class="modal-body">
-                <form action = "updateProfile.php">
+                <form action = "updateProfile.php" method = "post">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Crystal Ho">
+                        <input type="text" class="form-control" id="name" name = "name" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="123@virginia.edu">
+                        <label for="exampleInputEmail1">Contact</label>
+                        <input type="text" class="form-control" id="contact" name = "contact" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
-                        <label for="meeting-time">Location</label>
-                        <input type="input" class = "form-control" id="meeting-time" name="meeting-time">
+                        <label for="location">Location</label>
+                        <input type="text" class = "form-control" id="loc" name = "loc">
                     </div>
                     <div class="form-group">
                         <label for="event-description">Car Description</label>
-                        <textarea class="form-control" id="event-description" rows="7"></textarea>
+                        <textarea class="form-control" id="car_desc" name = "car_desc" rows="7"></textarea>
                     </div>
-                    <a class="btn btn-primary" href="" role="button">Logout</a>
+                    <a class="btn btn-primary" href="signin.php" role="button">Logout</a>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save</button>
-            </div>
             </div>
         </div>
         </div>
-    <!--Searchbar-->
-    <div class="jumbotron jumbotron-fluid searchheader txtoutline">
-        <div class="container" style = "text-align: center;">
-            <h1 class="display-4" style = "font-weight: 900;">Where to?</h1>
-            <p>Search for a place in UVA</p>
-            <div class="input-group rounded">
-                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                aria-describedby="search-addon"/>
-                <span class="input-group-text border-0" id="search-addon">
-                <button><i class="fas fa-search" role="img" title = "Search"></i></button>
-                </span>
-            </div>
-        </div>
-    </div>
-  
