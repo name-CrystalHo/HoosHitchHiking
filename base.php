@@ -4,24 +4,7 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
 -->
 <!-- cs4640 Server: https://cs4640.cs.virginia.edu/cth6xmj/sprint2/ -->
 <!-- Google Cloud Platform:https://storage.googleapis.com/webpl-demo-hooshitchhiking/index.html-->
-<?php
-include("database_credentials.php");
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-$mysqli = new mysqli($dbhost, $dbusername, $dbpasswd, $dbname);
-$message = "";
-if (isset($_GET["success"])) {
-    if ($_GET["success"] == true) {
-        $message = "<div class='alert alert-success' style = 'margin:0;'><b>Profile successfully updated!</b></div>";
-    }
-    else {
-        $message = "<div class='alert alert-danger'style = 'margin:0;'><b>Error: Unable to update profile</b></div>";
-    }
-}
-else {
-    $message = "";
-}
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -142,4 +125,4 @@ else {
             </div>
         </div>
     </div>
-    
+    <?php if(!empty($_SESSION["profileUpdate"])){echo $_SESSION["profileUpdate"];}?>

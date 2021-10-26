@@ -24,6 +24,7 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
                 <img src="styles/images/uvalogo.png" alt="uvalogo">
                 <div class="title" style="font-family: 'Staatliches', cursive; font-size: 7vw;">Hoos <br> HitchHiking?</div>
                 <a href="<?php echo $client->createAuthUrl(); ?>"><button title="google-login"></button></a>
+                <?php if(!empty($_SESSION["error"])){echo $_SESSION["error"];}?>
             </div>
             <!-- Right Container (contains Uva image) -->
             <div class="right-container ">

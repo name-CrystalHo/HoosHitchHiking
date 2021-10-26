@@ -1,7 +1,4 @@
-<?php include("base.php");
-// echo $_SESSION["email"];
-?>
-
+<?php include("base.php");?>
     <!--Departing soon featured-->
     <div class="container">
         <div class="row no-gutters" style = "margin: 40px 0 20px">

@@ -68,7 +68,6 @@ class HHController {
        if(isset($_GET['code'])){
         
         $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
-        echo $token["error"];
         if(!isset($token["error"])){
             $db_connection=$this->db->mysqli;
             $client->setAccessToken($token['access_token']);
@@ -81,33 +80,42 @@ class HHController {
             $full_name = mysqli_real_escape_string($db_connection, trim($google_account_info->name));
             $email = mysqli_real_escape_string($db_connection, $google_account_info->email);
             // $profile_pic = mysqli_real_escape_string($db_connection, $google_account_info->picture);
-            
-            // checking user already exists or not
-            $get_user = mysqli_query($db_connection, "SELECT `email` FROM `students` WHERE `email`='$email'");
-            if(mysqli_num_rows($get_user) > 0){
+            //check if UVA Student
+            $regex="<[a-z][a-z][a-z]?[0-9][a-z][a-z]?[a-z]?@virginia.edu>";
+            if(preg_match($regex,$email)){
+                            // checking user already exists or not
+                $get_user = mysqli_query($db_connection, "SELECT `email` FROM `students` WHERE `email`='$email'");
+                if(mysqli_num_rows($get_user) > 0){
 
-                $_SESSION['email'] = $email; 
-                $_SESSION['name'] = $full_name; 
-                header('Location: /HoosHitchHiking/home');
-                return;
-
-            }
-            else{
-
-                // if user not exists we will insert the user
-                $insert = mysqli_query($db_connection, "INSERT INTO `students`(`name`,`email`) VALUES('$full_name','$email')");
-
-                if($insert){
-                    $_SESSION['email'] = $email;
-                    $_SESSION['name'] = $full_name;  
-                    header('Location: /HoosHitchHiking/');
+                    $_SESSION['email'] = $email; 
+                    $_SESSION['name'] = $full_name; 
+                    header('Location: /HoosHitchHiking/home');
                     return;
+
                 }
                 else{
-                    echo "Sign up failed!(Something went wrong).";
-                }
 
+                    // if user not exists we will insert the user
+                    $insert = mysqli_query($db_connection, "INSERT INTO `students`(`name`,`email`) VALUES('$full_name','$email')");
+
+                    if($insert){
+                        $_SESSION['email'] = $email;
+                        $_SESSION['name'] = $full_name;  
+                        header('Location: /HoosHitchHiking/home');
+                        return;
+                    }
+                    else{
+                        echo "Sign up failed!(Something went wrong).";
+                    }
+
+                }
             }
+            else{
+                $error_msg="Must be a UVA student!";
+                $_SESSION['error']="<div class='alert alert-danger'style = 'margin:0;'><b>Error: $error_msg </b></div>";
+                header('Location: /HoosHitchHiking/home');
+            }
+
         }
         }
         include("signin.php");
@@ -125,11 +133,11 @@ class HHController {
                                 //TODO: Use session email
             $stmt->bind_param("sssss", $_POST["name"], $_POST["contact"], $_POST["loc"], $_POST["car_desc"],$_POST["email"]);
             if ($stmt->execute()) {
-                $success = True;
+                $_SESSION["updateProfile"] = "<div class='alert alert-success' style = 'margin:0;'><b>Profile successfully updated!</b></div>";
             }
         }
             else {
-                $success = False;
+                $_SESSION["updateProfile"]  = "<div class='alert alert-danger'style = 'margin:0;'><b>Error: Unable to update profile</b></div>";
             }
             header("Location:home");
     }

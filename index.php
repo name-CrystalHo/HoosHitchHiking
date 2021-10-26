@@ -11,6 +11,7 @@ spl_autoload_register(function($classname){
 $path = parse_url($_SERVER["REQUEST_URI"],PHP_URL_PATH);
 $path = str_replace("/HoosHitchHiking/","",$path);
 $parts = explode("/",$path);
+
 session_start(); 
 
 if(!isset($_SESSION["email"])){
