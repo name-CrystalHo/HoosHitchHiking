@@ -1,4 +1,6 @@
-<?php include 'base.php' ?>
+<?php 
+include 'base.php';
+?>
     <!--Searchbar-->
     <?=$message?>
     <div class="jumbotron jumbotron-fluid searchheader txtoutline">

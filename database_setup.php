@@ -15,14 +15,13 @@
         contact text not null,
         primary key (email));");
     
-    /* TOOO
     $db->query("drop table if exists post;");
     $db->query("create table post (
         id int not null auto_increment,
-        question text not null,
-        answer text not null,
-        points int not null,
-        category text not null,
+        poster varchar(25) not null,
+        destination text not null,
+        datetime text not null,
+        description text not null,
         primary key (id));");
     */
 

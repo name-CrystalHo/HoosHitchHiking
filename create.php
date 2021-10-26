@@ -15,24 +15,25 @@
     </div>
 
     <div class = "container">
-    <div class="row justify-content-md-center">
-    <div class="col col-lg-6">
-    <form>
-        <div class="form-group">
-          <label for="address">Destination</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter event name">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-6">
+                <form>
+                    <div class="form-group">
+                    <label for="address">Destination</label>
+                    <input type="email" class="form-control" id="email" name = "email" aria-describedby="emailHelp" placeholder="Enter event name">
+                    </div>
+                    <div class="form-group">
+                        <label for="meeting-time">Date and Time of Departure</label>
+                        <input type="datetime-local" class = "form-control" id="meeting-time" name="meeting-time" name="meeting-time">
+                    </div>
+                    <div class="form-group">
+                        <label for="event-description">Description</label>
+                        <textarea class="form-control" id="description" name = "description" rows="7"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success" style = "margin-top: 2vh;"><a href="index.html">Create</a></button>
+                </form>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="meeting-time">Date and Time of Departure</label>
-            <input type="datetime-local" class = "form-control" id="meeting-time" name="meeting-time">
-        </div>
-        <div class="form-group">
-            <label for="event-description">Description</label>
-            <textarea class="form-control" id="event-description" rows="7"></textarea>
-        </div>
-        <button type="submit" class="btn btn-success" style = "margin-top: 2vh;"><a href="index.html">Create</a></button>
-    </form>
     </div>
-    </div>
-    </div>
+
 <?php include("footer.php")?>

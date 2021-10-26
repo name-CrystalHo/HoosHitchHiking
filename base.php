@@ -9,6 +9,18 @@ include("database_credentials.php");
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $mysqli = new mysqli($dbhost, $dbusername, $dbpasswd, $dbname);
 $message = "";
+if (isset($_GET["success"])) {
+    if ($_GET["success"] == true) {
+        $message = "<div class='alert alert-success' style = 'margin:0;'><b>Profile successfully updated!</b></div>";
+    }
+    else {
+        $message = "<div class='alert alert-danger'style = 'margin:0;'><b>Error: Unable to update profile</b></div>";
+    }
+}
+else {
+    $message = "";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -88,14 +100,14 @@ $message = "";
                     </button>
             </div>
             <div class="modal-body">
-                <form action = "" method = "post">
+                <form action = "updateProfile.php" method = "post">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Name</label>
-                        <input type="text" class="form-control" id="name" name = "name" aria-describedby="emailHelp" placeholder="Crystal Ho">
+                        <input type="text" class="form-control" id="name" name = "name" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Contact</label>
-                        <input type="text" class="form-control" id="contact" name = "contact" aria-describedby="emailHelp" placeholder="123@virginia.edu">
+                        <input type="text" class="form-control" id="contact" name = "contact" aria-describedby="emailHelp">
                     </div>
                     <div class="form-group">
                         <label for="location">Location</label>
@@ -115,21 +127,3 @@ $message = "";
             </div>
         </div>
         </div>
-        <?php //Process the profile update
-        if (isset($_POST["name"]) || isset($_POST["name"]) || isset($_POST["contact"]) || isset($_POST["loc"]) || isset($_POST["car_desc"])) {
-            $stmt = $mysqli->prepare("update student set
-                                name = ?,
-                                contact = ?,
-                                loc = ?,
-                                car_desc = ?
-                                where email = 'jtk2rw@virginia.edu';");
-                                //TODO: Use session email
-            $stmt->bind_param("ssss", $_POST["name"], $_POST["contact"], $_POST["loc"], $_POST["car_desc"]);
-            if ($stmt->execute()) {
-                $message = "<div class='alert alert-success' style = 'margin:0;'><b>Profile successfully updated!</b></div>";
-            }
-            else {
-                $message = "<div class='alert alert-danger'style = 'margin:0;'><b>Error: Unable to update profile</b></div>";
-            }
-        }
-        ?>
