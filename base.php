@@ -86,7 +86,6 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
                 <form action ="<?=$this->url?>/updateProfile" method = "post">
                     <div class="form-group">
                         <input type="hidden" id="email" name="email" value=<?=$_SESSION['email']?>>
-<<<<<<< Updated upstream
                         <label for="exampleInputEmail1">Name</label>
                         <input type="text" class="form-control" value=<?=$_SESSION['name']?> id="name" name = "name" aria-describedby="emailHelp">
                     </div>
@@ -101,25 +100,6 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
                     <div class="form-group">
                         <label for="event-description">Car Description</label>
                         <textarea class="form-control" id="car_desc" name = "car_desc" rows="7"></textarea>
-=======
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" value=<?=$_SESSION['name']?> id="name" name = "name" aria-describedby="emailHelp">
-                    </div>
-                    <div class="form-group">
-                        <input type="hidden" id="contact" name="contact" value=<?=$_SESSION['contact']?>>
-                        <label for="contactInfo">Contact</label>
-                        <input type="text" class="form-control" value=<?=$_SESSION['contact']?> id="contact" name = "contact" aria-describedby="emailHelp">
-                    </div>
-                    <div class="form-group">
-                        <input type="hidden" id="loc" name="loc" value=<?=$_SESSION['loc']?>>
-                        <label for="location">Location</label>
-                        <input type="text" class = "form-control" value=<?=$_SESSION['loc']?> id="loc" name = "loc">
-                    </div>
-                    <div class="form-group">
-                        <input type="hidden" id="car_desc" name="car_desc" value=<?=$_SESSION['car_desc']?>>
-                        <label for="car_description">Car Description</label>
-                        <textarea type="text" class="form-control" id="car_desc" name = "car_desc" rows="7"><?=$_SESSION['car_desc']?></textarea>
->>>>>>> Stashed changes
                     </div>
                     <a class="btn btn-primary" href="<?=$this->url?>/logout"  role="button">Logout</a>
                     <div class="modal-footer">
