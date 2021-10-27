@@ -97,6 +97,7 @@ class HHController {
                     $_SESSION["loc"] = $data[0]["loc"];
                     $_SESSION["car_desc"] = $data[0]["car_desc"];
                     $_SESSION["contact"] = $data[0]["contact"];
+
                     header('Location: /HoosHitchHiking/home');
                     return;
 
@@ -112,6 +113,7 @@ class HHController {
                         $_SESSION["loc"] = "";
                         $_SESSION["car_desc"] ="";
                         $_SESSION["contact"] ="";
+
                         header('Location: /HoosHitchHiking/home');
                         return;
                     }
@@ -148,6 +150,9 @@ class HHController {
                 $_SESSION["contact"] = $_POST["contact"];
                 $_SESSION["loc"] = $_POST["loc"];
                 $_SESSION["car_desc"] = $_POST["car_desc"];
+            $stmt->bind_param("sssss", $_POST["name"], $_POST["contact"], $_POST["loc"], $_POST["car_desc"],$_POST["email"]);
+            if ($stmt->execute()) {
+                $_SESSION["updateProfile"] = "<div class='alert alert-success' style = 'margin:0;'><b>Profile successfully updated!</b></div>";
             }
         }
             else {
