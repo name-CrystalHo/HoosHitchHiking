@@ -1,4 +1,7 @@
-<!-- Resources: https://www.w3jar.com/login-with-google-account-using-php-mysqli-source-code/ -->
+<!--
+Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
+Resources: https://www.w3jar.com/login-with-google-account-using-php-mysqli-source-code/
+-->
 
 <?php 
 ini_set('display_errors', 1);
