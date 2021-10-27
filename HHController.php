@@ -86,9 +86,23 @@ class HHController {
                             // checking user already exists or not
                 $get_user = mysqli_query($db_connection, "SELECT `email` FROM `students` WHERE `email`='$email'");
                 if(mysqli_num_rows($get_user) > 0){
+<<<<<<< Updated upstream
 
                     $_SESSION['email'] = $email; 
                     $_SESSION['name'] = $full_name; 
+=======
+                    //retrieve user data
+                    $stmt = $this->db->mysqli->prepare("select * from students where email = ?;");
+                    $stmt->bind_param("s", $email);
+                    $stmt->execute();
+                    $res = $stmt->get_result();
+                    $data = $res->fetch_all(MYSQLI_ASSOC);
+                    $_SESSION['email'] = $email; 
+                    $_SESSION['name'] = $full_name;
+                    $_SESSION["loc"] = $data[0]["loc"];
+                    $_SESSION["car_desc"] = $data[0]["car_desc"];
+                    $_SESSION["contact"] = $data[0]["contact"];
+>>>>>>> Stashed changes
                     header('Location: /HoosHitchHiking/home');
                     return;
 
@@ -101,6 +115,12 @@ class HHController {
                     if($insert){
                         $_SESSION['email'] = $email;
                         $_SESSION['name'] = $full_name;  
+<<<<<<< Updated upstream
+=======
+                        $_SESSION["loc"] = "";
+                        $_SESSION["car_desc"] ="";
+                        $_SESSION["contact"] ="";
+>>>>>>> Stashed changes
                         header('Location: /HoosHitchHiking/home');
                         return;
                     }
@@ -130,10 +150,20 @@ class HHController {
                                 loc = ?,
                                 car_desc = ?
                                 where email = ?;");
+<<<<<<< Updated upstream
                                 //TODO: Use session email
             $stmt->bind_param("sssss", $_POST["name"], $_POST["contact"], $_POST["loc"], $_POST["car_desc"],$_POST["email"]);
             if ($stmt->execute()) {
                 $_SESSION["updateProfile"] = "<div class='alert alert-success' style = 'margin:0;'><b>Profile successfully updated!</b></div>";
+=======
+            $stmt->bind_param("sssss", $_POST["name"], $_POST["contact"], $_POST["loc"], $_POST["car_desc"],$_POST["email"]);
+            if ($stmt->execute()) {
+                $_SESSION["updateProfile"] = "<div class='alert alert-success' style = 'margin:0;'><b>Profile successfully updated!</b></div>";
+                $_SESSION["name"] = $_POST["name"];
+                $_SESSION["contact"] = $_POST["contact"];
+                $_SESSION["loc"] = $_POST["loc"];
+                $_SESSION["car_desc"] = $_POST["car_desc"];
+>>>>>>> Stashed changes
             }
         }
             else {
