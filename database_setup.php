@@ -1,4 +1,10 @@
 <?php
+  include("database_credentials.php"); // define variables
+
+    /** SETUP **/
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+    $db = new mysqli($dbhost, $dbusername, $dbpasswd, $dbname);
+    
     $db->query("drop table if exists students;");
     $db->query("create table students (
         id int not null auto_increment,
