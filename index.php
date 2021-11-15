@@ -22,6 +22,5 @@ if(!isset($_SESSION["email"])){
     $parts=["signin"];   
 }
 
-
 $HH = new HHController();
 $HH->run($parts[0]);?>

@@ -4,7 +4,6 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
 -->
 <!-- cs4640 Server: https://cs4640.cs.virginia.edu/cth6xmj/sprint2/ -->
 <!-- Google Cloud Platform:https://storage.googleapis.com/webpl-demo-hooshitchhiking/index.html-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
