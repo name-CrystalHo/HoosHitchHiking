@@ -5,7 +5,7 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
 <!-- cs4640 Server: https://cs4640.cs.virginia.edu/cth6xmj/sprint2/ -->
 <!-- Google Cloud Platform:https://storage.googleapis.com/webpl-demo-hooshitchhiking/index.html-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme = "light">
 <head>
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,7 +23,8 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> 
-    
+    <!--JS Scripts-->
+    <script src = "base.js"></script>
 
     <!-- For development, we may want a better-printed CSS, but with larger download size.  Ignore "min"
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.css" rel="stylesheet"> 
@@ -37,7 +38,7 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
 
 <body>
     <!--Navbar-->
-    <nav class="navbar navbar-expand-md navbar-dark sticky-top"  style = "background-color:#E57200; font-family: 'Staatliches', cursive;">
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top navbar-light"  style = "font-family: 'Staatliches', cursive;">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -67,6 +68,11 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?=$this->url?>/create">Create Post</a>
+                </li>
+                <li class = "nav-item">
+                    <a class = "nav-link" style = "padding-bottom: 0">
+                        <i class = "fas fa-sun fa-3x mt-0 theme-icon" style = "font-size: 25px;"></i>
+                    </a>
                 </li>
             </ul>
         </div>
