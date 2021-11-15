@@ -5,7 +5,7 @@ class HHController {
     private $db;
     
     private $url = "/HoosHitchHiking";
-    
+
     //will have instance of database object
     public function __construct() {
         $this->db = new Database();
@@ -16,20 +16,26 @@ class HHController {
             case "updateProfile":
                 $this->updateProfile();
                 break;
+            case "get_allpost":
+                $this->getAllPost();
+                break;
+            case "createPost":
+                $this->createPost();
+                break;
             case "home":
-                include("home.php");
+                include("templates/home.php");
                 break;
             case "myposts":
-                include("my-posts.php");
+                include("templates/my-posts.php");
                 break;
             case "all":
-                include("all.php");
+                include("templates/all.php");
                 break;
             case "faq":
-                include("faq.php");
+                include("templates/faq.php");
                 break;
             case "create":
-                include("create.php");
+                include("templates/create.php");
                 break;
             case "logout":
                 $this->destroySession();           
@@ -49,6 +55,7 @@ class HHController {
     }
 
     public function signin() {
+        
         // our login code from index.php last time!
         $error_msg = ""; 
         require 'google-api/vendor/autoload.php';
@@ -66,10 +73,9 @@ class HHController {
         $client->addScope("email");
         $client->addScope("profile");
        if(isset($_GET['code'])){
-        
+        echo "sdfdsf";
         $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
         if(!isset($token["error"])){
-            $db_connection=$this->db->mysqli;
             $client->setAccessToken($token['access_token']);
 
             // getting profile information
@@ -81,6 +87,7 @@ class HHController {
             $email = mysqli_real_escape_string($db_connection, $google_account_info->email);
             // $profile_pic = mysqli_real_escape_string($db_connection, $google_account_info->picture);
             //check if UVA Student
+            
             $regex="<[a-z][a-z][a-z]?[0-9][a-z][a-z]?[a-z]?@virginia.edu>";
             if(preg_match($regex,$email)){
                             // checking user already exists or not
@@ -131,7 +138,7 @@ class HHController {
 
         }
         }
-        include("signin.php");
+        include("templates/signin.php");
     }
         
     
@@ -152,14 +159,49 @@ class HHController {
                 $_SESSION["car_desc"] = $_POST["car_desc"];
             $stmt->bind_param("sssss", $_POST["name"], $_POST["contact"], $_POST["loc"], $_POST["car_desc"],$_POST["email"]);
             if ($stmt->execute()) {
-                $_SESSION["updateProfile"] = "<div class='alert alert-success' style = 'margin:0;'><b>Profile successfully updated!</b></div>";
+                $_SESSION["updateProfile"] = "<script type='text/javascript'>
+                successAlert('profileAlert','Profile sucessfully updated!');;
+            </script>";
             }
         }
             else {
-                $_SESSION["updateProfile"]  = "<div class='alert alert-danger'style = 'margin:0;'><b>Error: Unable to update profile</b></div>";
+                $_SESSION["updateProfile"]  = "<script type='text/javascript'>
+                failAlert('profileAlert','Error: Profile did not update!');;
+            </script>";
             }
             header("Location:home");
     }
 
 }
+    public function getAllPost(){
+        echo "sdfs";
+        $data = $this->db->query("SELECT * FROM post");
+        if (!isset($data)) {
+            die("No posts in the database");
+        }
+        $post=$data;
+        header("Content-type: application/json");
+        echo json_encode($post,JSON_PRETTY_PRINT);
+    }
+    public function createPost(){
+        $post_details = array('destination' => $_POST["destination"], 
+                            'datetime' => $_POST["datetime"], 
+                            'description' => $_POST["description"],
+                            'requestOrOffer' => $_POST['requestOrOffer']
+                        );
+        // $data=json_decode(json_encode($post_details),true);
+        // print_r($data);
+        // $stmt = $this->db->mysqli->prepare("insert into post (destination, datetime, description, type) values (?,?,?,?);");
+        // $stmt->bind_param("ssss",$post_details["destination"],$post_details["datetime"],$post_details["description"],$post_details["requestOrOffer"]);
+        // if ($stmt->execute()) {
+        //     echo "updated";
+        // }
+        // else{
+        //     echo "something went wrong";
+        // }
+        header("Content-type: application/json");
+        echo json_encode($post_details, JSON_PRETTY_PRINT);
+
+    }
+    
 }

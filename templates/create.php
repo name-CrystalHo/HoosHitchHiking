@@ -3,12 +3,11 @@
     <h1 class = "display-4" style = "text-align: center; margin-top: 4vh; margin-bottom: 4vh;">
         Create a Post
     </h1>
-
-
+    <p id="testing2"></p>
     <div class = "container">
         <div class="row justify-content-md-center">
             <div class="col col-lg-6">
-                <form action = "createPost.php" method = "post">
+                <form action = "<?=$this->url?>/createPost" method = "post" onsubmit="return validatePost()">
                 <div class = "row" style = "text-align: center;">
                     <div class="btn-group btn-group-toggle" data-toggle="buttons" style = "text-align: center;">
                         <label class="btn btn-secondary active">
@@ -38,3 +37,8 @@
     </div>
 
 <?php include("footer.php")?>
+<script> 
+var today = new Date().toISOString().split('T')[0];
+var time=new Date().toISOString().split('T')[1];
+time=time.substring(0,5)
+document.getElementsByName("datetime")[0].setAttribute('min', today+"T"+time);</script>

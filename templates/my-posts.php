@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row no-gutters" style = "margin: 40px 0 20px">
         </div>
-            <div class="row">
+            <div class="row" id="mypost-row">
                 <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
                     <div class="card card-default">
                         <img class="card-img-top" src="styles/images/uva-afc.jpg" alt="Card image cap">
