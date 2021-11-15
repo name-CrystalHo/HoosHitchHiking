@@ -1,8 +1,8 @@
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-muted" style = "margin-top: 200px; padding-top: 3vh;">
+<footer class="text-center text-lg-start text-muted footer-dark" style = "margin-top: 200px; padding-top: 3vh;">
 
     <!-- Section: Links  -->
-    <section class="">
+    <section class="footer-text-light">
         <div class="container text-center text-md-start mt-5">
         <!-- Grid row -->
         <div class="row mt-3">
@@ -25,7 +25,7 @@
                 Pages
             </h6>
             <p>
-                <a href="<?=$this->url?>/home"> class="text-reset">Home</a>
+                <a href="<?=$this->url?>/home" class="text-reset">Home</a>
             </p>
             <p>
                 <a href="<?=$this->url?>/mypost" class="text-reset">My Posts</a>
