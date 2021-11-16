@@ -30,7 +30,7 @@
                         <label for="description">Description</label>
                         <textarea class="form-control" id="description" name = "description" rows="7"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-success" style = "margin-top: 2vh;">Create</button>
+                    <button type="submit" class="btn btn-success" onclick="showPostAlert()(); return false;" style = "margin-top: 2vh;">Create</button>
                 </form>
             </div>
         </div>

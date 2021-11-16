@@ -44,12 +44,14 @@ function getPost(){
         document.getElementById("message").innerHTML = 
             "<div class='alert alert-danger'>An Error Occurred</div>";
     });
-}// Method to display a post
+}
+
+// Method to display a post
 function displayMyPost() {
-    document.getElementById("testing2").innerHTML = "Post:";
+    document.getElementById("testing2").innerHTML = "Post:"+post.destination;
 }
 // Method to display a post
-function displayAllPost() {
-    document.getElementById("testing").innerHTML = "hello";
-}
+// function displayAllPost() {
+//     document.getElementById("testing").innerHTML = "hello";
+// }
 getPost();
