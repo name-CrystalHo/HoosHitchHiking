@@ -18,6 +18,7 @@
     $db->query("drop table if exists post;");
     $db->query("create table post (
         id int not null auto_increment,
+        email varchar(25),
         poster varchar(25) not null,
         destination text not null,
         datetime text not null,

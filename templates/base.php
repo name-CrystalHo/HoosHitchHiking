@@ -48,7 +48,7 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
                     <a class="nav-link" href="<?=$this->url?>/myposts">My Posts</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?=$this->url?>/get_allpost">All Posts</a>
+                    <a class="nav-link" href="<?=$this->url?>/all">All Posts</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?=$this->url?>/faq">FAQ</a>

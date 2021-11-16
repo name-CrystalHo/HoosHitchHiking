@@ -16,7 +16,9 @@ $path = str_replace("/HoosHitchHiking/","",$path);
 $parts = explode("/",$path);
 
 session_start(); 
-
+if (isset($_GET["command"])) {
+    $parts[0] = $_GET["command"];
+}
 if(!isset($_SESSION["email"])){
     //need to login 
     $parts=["signin"];   
