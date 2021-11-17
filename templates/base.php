@@ -24,8 +24,8 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> 
     <!--JS Scripts-->
+    <script type="text/javascript" src="script.js"></script>
     <script src = "base.js"></script>
-    <script type="text/javascript" src="base.js"></script>
 
     <!-- For development, we may want a better-printed CSS, but with larger download size.  Ignore "min"
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.css" rel="stylesheet"> 
