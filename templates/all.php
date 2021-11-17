@@ -19,7 +19,7 @@
                 <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
                     <div class="card card-default">
                         <img class="card-img-top" src="styles/images/uva-afc.jpg" alt="Card image cap">
-                        <div class="card-body">
+                        <div class="card-body card-bg-light">
                             <h5 class="card-title">Aquatic Fitness Center</h5>
                             <p>Date: 10/5/2021</p>
                             <p>Departure Time: 11:00 AM</p>
@@ -31,7 +31,7 @@
                 <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
                     <div class="card card-default">
                         <img class="card-img-top" src="styles/images/barracks.jpg" alt="Card image cap">
-                        <div class="card-body">
+                        <div class="card-body card-bg-light">
                             <h5 class="card-title">Barracks</h5>
                             <p>Date: 9/28/2021</p>
                             <p>Time: 11:00 AM</p>
@@ -45,7 +45,7 @@
                 <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
                     <div class="card card-default">
                         <img class="card-img-top" src="styles/images/Ohill.jpg" alt="Card image cap">
-                        <div class="card-body">
+                        <div class="card-body card-bg-light">
                             <h5 class="card-title">Ohill</h5>
                             <p>Date: 9/28/2021</p>
                             <p>Time: 1:00 PM</p>
@@ -59,7 +59,7 @@
                 <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
                     <div class="card card-default">
                         <img class="card-img-top" src="styles/images/uva-lawn.jpg" alt="Card image cap">
-                        <div class="card-body">
+                        <div class="card-body card-bg-light">
                             <h5 class="card-title">The Lawn</h5>
                             <p>Date: 9/28/2021</p>
                             <p>Time: 1:00 PM</p>
@@ -99,7 +99,7 @@
                         <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
                             <div class="card card-default">
                                 <img class="card-img-top" src="styles/images/uva-afc.jpg" alt="Card image cap">
-                                <div class="card-body">
+                                <div class="card-body card-bg-light">
                                     <h5 class="card-title">Aquatic Fitness Center</h5>
                                     <p>Date: 10/5/2021</p>
                                     <p>Departure Time: 11:00 AM</p>
@@ -111,7 +111,7 @@
                         <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
                             <div class="card card-default">
                                 <img class="card-img-top" src="styles/images/uva-afc.jpg" alt="Card image cap">
-                                <div class="card-body">
+                                <div class="card-body card-bg-light">
                                     <h5 class="card-title">Aquatic Fitness Center</h5>
                                     <p>Date: 10/5/2021</p>
                                     <p>Departure Time: 11:00 AM</p>
@@ -123,7 +123,7 @@
                         <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
                             <div class="card card-default">
                                 <img class="card-img-top" src="styles/images/uva-afc.jpg" alt="Card image cap">
-                                <div class="card-body">
+                                <div class="card-body card-bg-light">
                                     <h5 class="card-title">Aquatic Fitness Center</h5>
                                     <p>Date: 10/5/2021</p>
                                     <p>Departure Time: 11:00 AM</p>
@@ -135,7 +135,7 @@
                         <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
                             <div class="card card-default">
                                 <img class="card-img-top" src="styles/images/uva-afc.jpg" alt="Card image cap">
-                                <div class="card-body">
+                                <div class="card-body card-bg-light">
                                     <h5 class="card-title">Aquatic Fitness Center</h5>
                                     <p>Date: 10/5/2021</p>
                                     <p>Departure Time: 11:00 AM</p>
