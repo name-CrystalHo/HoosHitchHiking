@@ -3,8 +3,6 @@
     <h1 class = "display-4" style = "text-align: center; margin-top: 4vh; margin-bottom: 4vh;">
         Create a Post
     </h1>
-
-
     <div class = "container">
         <div class="row justify-content-md-center">
             <div class="col col-lg-6">
