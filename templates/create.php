@@ -31,7 +31,7 @@
                         <label for="description">Description</label>
                         <textarea class="form-control" id="description" name = "description" rows="7"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-success" onclick="showPostAlert()(); return false;" style = "margin-top: 2vh;">Create</button>
+                    <button type="submit" class="btn btn-success" onclick="getPost()"  style = "margin-top: 2vh;">Create</button>
                 </form>
             </div>
         </div>
@@ -40,7 +40,7 @@
 
 <?php include("footer.php")?>
 
-<script type = "text/javascript"> 
+<script type = "text/javascript">
     //Set minimum time
     var today = new Date().toISOString().split('T')[0];
     var time=new Date().toISOString().split('T')[1];

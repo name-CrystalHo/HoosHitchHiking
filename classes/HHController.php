@@ -16,8 +16,11 @@ class HHController {
             case "updateProfile":
                 $this->updateProfile();
                 break;
+            case "get_mypost":
+                include("myPostQuery.php");
+                break;
             case "get_allpost":
-                $this->getAllPost();
+                include("allPostQuery.php");
                 break;
             case "createPost":
                 $this->createPost();
@@ -172,35 +175,46 @@ class HHController {
     }
 
 }
+    public function getMyPost(){
+
+        $stmt=$mysqli->prepare("select * from post where email=?");
+        $stmt->bind_param("s",$_SESSION["email"]);
+        if(!$stmt->execute()){
+            echo "Error";
+        }
+        $res=$stmt->get_result();
+        $posts=$res->fetch_all(MYSQLI_ASSOC);
+        echo json_encode($posts);
+    }
     public function getAllPost(){
-        echo "sdfs";
-        $data = $this->db->query("SELECT * FROM post");
-        if (!isset($data)) {
+        $data = $this->db->mysqli->query("select * from post;");
+        if (!isset($data[0])) {
             die("No posts in the database");
         }
-        $post=$data;
+        $post=$data[0];
         header("Content-type: application/json");
         echo json_encode($post,JSON_PRETTY_PRINT);
     }
     public function createPost(){
-        $post_details = array('destination' => $_POST["destination"], 
+        $post_details = array('email' => $_SESSION["email"],
+                            'destination' => $_POST["destination"], 
                             'datetime' => $_POST["datetime"], 
                             'description' => $_POST["description"],
                             'requestOrOffer' => $_POST['requestOrOffer']
                         );
-        $data=json_decode(json_encode($post_details),true);
-        print_r($data);
-        $stmt = $this->db->mysqli->prepare("insert into post (destination, datetime, description, type) values (?,?,?,?);");
-        $stmt->bind_param("ssss",$post_details["destination"],$post_details["datetime"],$post_details["description"],$post_details["requestOrOffer"]);
-        if ($stmt->execute()) {
-            echo "updated";
+        // $data=json_decode(json_encode($post_details),true);
+        // print_r($data);
+        $stmt = $this->db->mysqli->prepare("insert into post (email,destination, datetime, description, type) values (?,?,?,?,?);");
+        $stmt->bind_param("sssss",$post_details["email"],$post_details["destination"],$post_details["datetime"],$post_details["description"],$post_details["requestOrOffer"]);
+        if(!$stmt->execute()){
+            echo "Error";
         }
         else{
-            echo "something went wrong";
+            echo "updated";
+            header("Location:home");
         }
-        header("Content-type: application/json");
-        echo json_encode($post_details, JSON_PRETTY_PRINT);
-
+        // header("Content-type: application/json");
+        // echo json_encode($post_details, JSON_PRETTY_PRINT)        
     }
     
 }

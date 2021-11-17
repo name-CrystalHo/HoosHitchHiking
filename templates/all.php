@@ -3,8 +3,16 @@
     <h1 class = "display-4" style = "text-align: center; margin-top: 4vh; margin-bottom: 4vh; font-family: 'Staatliches', cursive;">
         All posts
     </h1>
-    <p id="testing"></p>
-    <div class="container">
+    <table class="table" id=allpost_table>
+            <tr>
+                <th>Destination</th>
+                <th>Date and Time</th>
+                <th>Description</th>
+            </tr>
+            <tbody id="mypost_data">
+            </tbody> 
+        </table> 
+    <div class="container" id=allpost_row>
         <div class="row no-gutters" style = "margin: 40px 0 20px">
           </div>
             <div class="row">
@@ -139,5 +147,53 @@
                     </div>
     </div>
     </div>
+    <script>
+    var ajax=new XMLHttpRequest();
+    var method="GET";
+    var path="allPostQuery.php";
+    var asyn=true;
+    var posts = [];
+    ajax.open(method,path,asyn);
+    ajax.send();
+    ajax.addEventListener("load", function() {
+    // set question
+    if (this.status == 200) { // worked   
+       //alert("Text"+JSON.parse(this.responseText));
+       posts=JSON.parse(this.responseText);
+       displayAllPost(posts);
+    }
+    });
+      // What happens on error
+    ajax.addEventListener("error", function() {
+        document.getElementById("message").innerHTML = 
+            "<div class='alert alert-danger'>An Error Occurred</div>";
+    });
+    function displayAllPost(posts){
+        var table = document.getElementById("allpost_table");
+        table.removeChild(table.getElementsByTagName("tbody")[0]);
+        var body = document.createElement("tbody");
+        for(var i = 0; i < posts.length; i++) {
+            var post = posts[i];
+            var row = document.createElement("tr");
+            var th = document.createElement("th"); 
 
+            var destination = document.createElement("td");
+            var property_text = document.createTextNode(post.destination);
+            destination.appendChild(property_text);
+            row.appendChild(destination);
+            var date = document.createElement("td");
+            var property_text = document.createTextNode(post.datetime);
+            date.appendChild(property_text);
+            row.appendChild(date);
+            var descrip = document.createElement("td");
+            var property_text = document.createTextNode(post.description);
+            descrip.appendChild(property_text);
+            row.appendChild(descrip);
+            body.appendChild(row);
+        }
+        table.appendChild(body);
+}
+
+
+</script>
     <?php include("footer.php")?>
