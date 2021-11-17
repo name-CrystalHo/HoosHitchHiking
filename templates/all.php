@@ -5,17 +5,17 @@
     </h1>
     <table class="table" id=allpost_table>
             <tr>
-                <th scope="col">Destination</th>
-                <th scope="col">Date and Time</th>
-                <th scope="col">Description</th>
+                <th>Destination</th>
+                <th>Date and Time</th>
+                <th>Description</th>
             </tr>
             <tbody id="mypost_data">
             </tbody> 
         </table> 
-    <div class="container">
+    <div class="container" id=allpost_row>
         <div class="row no-gutters" style = "margin: 40px 0 20px">
           </div>
-            <div class="row" id=allpost_row>
+            <div class="row">
                 <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
                     <div class="card card-default">
                         <img class="card-img-top" src="styles/images/uva-afc.jpg" alt="Card image cap">
@@ -155,30 +155,43 @@
     var posts = [];
     ajax.open(method,path,asyn);
     ajax.send();
-    ajax.onreadystatechange=function(){
-        if(this.readyState == 4 && this.status == 200){
-            posts=JSON.parse(this.responseText);
-            displayAllPost(posts);
-        }
+    ajax.addEventListener("load", function() {
+    // set question
+    if (this.status == 200) { // worked   
+       //alert("Text"+JSON.parse(this.responseText));
+       posts=JSON.parse(this.responseText);
+       displayAllPost(posts);
     }
+    });
+      // What happens on error
+    ajax.addEventListener("error", function() {
+        document.getElementById("message").innerHTML = 
+            "<div class='alert alert-danger'>An Error Occurred</div>";
+    });
     function displayAllPost(posts){
-    var table = document.getElementById("allpost_table");
-               table.removeChild(table.getElementsByTagName("tbody")[0]);
-                var body = document.createElement("tbody");
-                for(var i = 0; i < posts.length; i++) {
-                    var post = posts[i];
-                    var row = document.createElement("tr");
-                    var th = document.createElement("th");    
-                    for(const properties in post) {
-                        var property = document.createElement("td");
-                        var property_text = document.createTextNode(post[properties]);
+        var table = document.getElementById("allpost_table");
+        table.removeChild(table.getElementsByTagName("tbody")[0]);
+        var body = document.createElement("tbody");
+        for(var i = 0; i < posts.length; i++) {
+            var post = posts[i];
+            var row = document.createElement("tr");
+            var th = document.createElement("th"); 
 
-                        property.appendChild(property_text);
-                        row.appendChild(property);
-                    }
-                    body.appendChild(row);
-                }
-                table.appendChild(body);
+            var destination = document.createElement("td");
+            var property_text = document.createTextNode(post.destination);
+            destination.appendChild(property_text);
+            row.appendChild(destination);
+            var date = document.createElement("td");
+            var property_text = document.createTextNode(post.datetime);
+            date.appendChild(property_text);
+            row.appendChild(date);
+            var descrip = document.createElement("td");
+            var property_text = document.createTextNode(post.description);
+            descrip.appendChild(property_text);
+            row.appendChild(descrip);
+            body.appendChild(row);
+        }
+        table.appendChild(body);
 }
 
 

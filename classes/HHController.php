@@ -206,8 +206,15 @@ class HHController {
         // print_r($data);
         $stmt = $this->db->mysqli->prepare("insert into post (email,destination, datetime, description, type) values (?,?,?,?,?);");
         $stmt->bind_param("sssss",$post_details["email"],$post_details["destination"],$post_details["datetime"],$post_details["description"],$post_details["requestOrOffer"]);
-        header("Content-type: application/json");
-        echo json_encode($post_details, JSON_PRETTY_PRINT);
+        if(!$stmt->execute()){
+            echo "Error";
+        }
+        else{
+            echo "updated";
+            header("Location:home");
+        }
+        // header("Content-type: application/json");
+        // echo json_encode($post_details, JSON_PRETTY_PRINT)        
     }
     
 }
