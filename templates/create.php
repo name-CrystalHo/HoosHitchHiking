@@ -1,5 +1,6 @@
 <?php include("base.php")?>
-    <!--Create Post form-->
+<!--Create Post form-->
+<body onload = "prefillForm()" onunload = "autosaveForm()">
     <h1 class = "display-4" style = "text-align: center; margin-top: 4vh; margin-bottom: 4vh;">
         Create a Post
     </h1>
@@ -35,10 +36,39 @@
             </div>
         </div>
     </div>
+</body>
 
 <?php include("footer.php")?>
-<script> 
-var today = new Date().toISOString().split('T')[0];
-var time=new Date().toISOString().split('T')[1];
-time=time.substring(0,5)
-document.getElementsByName("datetime")[0].setAttribute('min', today+"T"+time);</script>
+
+<script type = "text/javascript"> 
+    //Set minimum time
+    var today = new Date().toISOString().split('T')[0];
+    var time=new Date().toISOString().split('T')[1];
+    time=time.substring(0,5)
+    document.getElementsByName("datetime")[0].setAttribute('min', today+"T"+time);
+
+    function Post(destination, description, datetime, type) {
+        this.destination = destination;
+        this.description = description;
+        this.datetime = datetime;
+        this.type = type;
+    }
+
+    function autosaveForm() {
+        var destination = document.getElementById('destination').value;
+        var description = document.getElementById("description").value;
+        var datetime = document.getElementById("datetime").value;
+        var type = document.querySelector('input[name="requestOrOffer"]:checked').value;
+        var post = new Post(destination, description, datetime, type);
+        localStorage.setItem("savedPost", JSON.stringify(post));
+    }
+
+    function prefillForm() {
+        var savedPost = localStorage.getItem("savedPost");
+        savedPost = JSON.parse(savedPost);
+        document.getElementById("destination").value = savedPost.destination;
+        document.getElementById("description").value = savedPost.description;
+        document.getElementById("datetime").value = savedPost.datetime;
+        document.getElementById('input[name="requestOrOffer"]:checked').value = true;
+    }
+</script>
