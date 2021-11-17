@@ -25,6 +25,7 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> 
     <!--JS Scripts-->
     <script src = "base.js"></script>
+    <script type="text/javascript" src="base.js"></script>
 
     <!-- For development, we may want a better-printed CSS, but with larger download size.  Ignore "min"
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.css" rel="stylesheet"> 
@@ -133,4 +134,6 @@ Sources used: https://cs4640.cs.virginia.edu, https://www.w3schools.com/
             </div>
         </div>
     </div>
-    <?php if(!empty($_SESSION["updateProfile"])){echo $_SESSION["updateProfile"];}?>
+    <div id="profileAlert"><?php if(!empty($_SESSION["updateProfile"])){echo $_SESSION["updateProfile"];}?> </div>
+
+    

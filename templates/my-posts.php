@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row no-gutters" style = "margin: 40px 0 20px">
         </div>
-            <div class="row">
+            <div class="row" id="mypost-row">
                 <div class="col-lg-3 col-md-6 col-12 d-flex align-items-stretch" style="margin-bottom:10px;">
                     <div class="card card-default">
                         <img class="card-img-top" src="styles/images/uva-afc.jpg" alt="Card image cap">
@@ -92,4 +92,45 @@
                 </div>
             </div>
         </div>
+<script>
+    var ajax=new XMLHttpRequest();
+    var method="GET";
+    var path="myPostQuery.php";
+    var asyn=true;
+    var posts = [];
+    ajax.open(method,path,asyn);
+    ajax.send();
+    ajax.onreadystatechange=function(){
+        if(this.readyState == 4 && this.status == 200){
+            posts=JSON.parse(this.responseText);
+            displayMyPost(posts);
+        }
+    }
+//     function getPost(){
+//     var ajax = new XMLHttpRequest();
+//     ajax.open("GET","myPostQuery.php",true);
+//     ajax.responseType="json";
+//     ajax.send(null);
+//    // What happens if the load succeeds
+//    // anonymous function
+//    ajax.addEventListener("load", function() {
+//     // set question
+//     if (this.status == 200) { // worked   
+//        post=this.response;
+//        displayMyPost();
+//        console.log(data);
+//     }
+//     });
+
+//     // What happens on error
+//     ajax.addEventListener("error", function() {
+//         document.getElementById("message").innerHTML = 
+//             "<div class='alert alert-danger'>An Error Occurred</div>";
+//     });
+// }
+function displayMyPost(posts){
+    console.log(posts);
+}
+
+</script>    
 <?php include("footer.php")?>
