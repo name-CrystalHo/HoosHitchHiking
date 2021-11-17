@@ -21,7 +21,8 @@
                     </div>
                     <div class="form-group">
                     <label for="destination">Destination</label>
-                    <input type="text" class="form-control" id="destination" name = "destination" aria-describedby="emailHelp" placeholder="Enter event name">
+                        <input type="text" class="form-control" id="destination" name = "destination" aria-describedby="emailHelp" placeholder="Enter event name">
+                        <div id = "destinationHelp" class = "form-text"></div>
                     </div>
                     <div class="form-group">
                         <label for="datetime">Date and Time of Departure</label>
@@ -41,12 +42,24 @@
 <?php include("footer.php")?>
 
 <script type = "text/javascript">
+
+    document.getElementById('destination').onblur = () => {
+        console.log('ee');
+        var destination = document.getElementById('destination').value;
+        var destHelp = document.getElementById('destinationHelp');
+        if(destination.length<3){
+            destHelp.textContent = "Please be more specific";
+        }
+        else {
+            destHelp.textContent = "";
+        }
+    }
     //Set minimum time
     var today = new Date().toISOString().split('T')[0];
     var time=new Date().toISOString().split('T')[1];
     time=time.substring(0,5)
     document.getElementsByName("datetime")[0].setAttribute('min', today+"T"+time);
-
+    
     function Post(destination, description, datetime, type) {
         this.destination = destination;
         this.description = description;
@@ -69,6 +82,5 @@
         document.getElementById("destination").value = savedPost.destination;
         document.getElementById("description").value = savedPost.description;
         document.getElementById("datetime").value = savedPost.datetime;
-        document.getElementById('input[name="requestOrOffer"]:checked').value = true;
     }
 </script>
