@@ -8,7 +8,7 @@ class HHController {
 
     private $db;
     
-    private $url = "/HoosHitchHiking";
+    private $url = "/jtk2rw/HoosHitchHiking";
 
     //will have instance of database object
     public function __construct() {
@@ -111,7 +111,7 @@ class HHController {
                         $_SESSION["car_desc"] = $data[0]["car_desc"];
                         $_SESSION["contact"] = $data[0]["contact"];
     
-                        header('Location: /HoosHitchHiking/home');
+                        header('Location: /jtk2rw/HoosHitchHiking/home');
                         return;
     
                     }
@@ -127,7 +127,7 @@ class HHController {
                             $_SESSION["car_desc"] ="";
                             $_SESSION["contact"] ="";
     
-                            header('Location: /HoosHitchHiking/home');
+                            header('Location: /jtk2rw/HoosHitchHiking/home');
                             return;
                         }
                         else{
@@ -139,7 +139,7 @@ class HHController {
                 else{
                     $error_msg="Must be a UVA student!";
                     $_SESSION['error']="<div class='alert alert-danger'style = 'margin:0;'><b>Error: $error_msg </b></div>";
-                    header('Location: /HoosHitchHiking/home');
+                    header('Location: jtk2rw/HoosHitchHiking/home');
                 }
     
             }
